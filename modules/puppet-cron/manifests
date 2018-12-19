@@ -1,0 +1,16 @@
+{
+  "name": "puppet-cron",
+  "version": "0.1.0",
+  "author": "Boye Holden",
+  "summary": "",
+  "license": "Apache-2.0",
+  "source": "",
+  "dependencies": [],
+  "operatingsystem_support": []
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 7.0.0"
+    }
+  ]
+}
