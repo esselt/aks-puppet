@@ -1,3 +1,3 @@
 node default {
-  include puppet-cron
+  include puppet_cron
 }
