@@ -16,7 +16,7 @@ class puppet_cron {
 
   cron { 'puppet-apply':
     ensure => present,
-    command => "/opt/puppetlabs/bin/puppet apply /etc/puppetlabs/code/site.pp"
+    command => "/opt/puppetlabs/bin/puppet apply /etc/puppetlabs/code/site.pp",
     user => 'root',
     minute => '*/5',
   }
