@@ -1,4 +1,4 @@
-class puppet-cron (){
+class puppet-cron {
 
   // Let's make sure the Puppet daemon isn't running.
   service { "puppet":
