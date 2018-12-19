@@ -9,7 +9,7 @@ class puppet-cron (){
   // Pull the latest commits to our Puppet module repository every 4 minutes.
   cron { 'puppet-pull':
     ensure => present,
-    command => "cd /etc/puppetlabs/code ; /usr/bin/git pull",
+    command => "cd /etc/puppetlabs/code/modules ; /usr/bin/git pull",
     user => 'root',
     minute => '*/4',
   } ~>
