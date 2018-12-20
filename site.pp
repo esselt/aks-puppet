@@ -32,8 +32,8 @@ node default {
     content => '-w /etc/docker/daemon.json -p wa',
     order   => 107
   }
-  auditd::rule { 'watch /etc/docker/daemon.json':
-    content => '-w /etc/docker/daemon.json -p wa',
+  auditd::rule { 'watch /usr/bin/docker-containerd':
+    content => '-w /usr/bin/docker-containerd -p wa',
     order   => 108
   }
   auditd::rule { 'watch /usr/bin/docker-runc':
