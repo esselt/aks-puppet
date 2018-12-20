@@ -24,5 +24,9 @@ forge "https://forgeapi.puppetlabs.com"
 # A module from Github pre-packaged tarball
 # mod 'puppetlabs-apache', '0.6.0', :github_tarball => 'puppetlabs/puppetlabs-apache'
 
+## LOCAL ##
 mod 'puppet_cron', :local => true
+
+## FORGE ##
+mod 'puppetlabs-stdlib', '5.1.0'
 mod 'kemra102-auditd', '2.2.0'
