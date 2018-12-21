@@ -1,9 +1,8 @@
 node default {
   include puppet_cron
 
-  include auditd
-
   ## DOCKER RULES ##
+  include auditd
   auditd::rule { 'watch /usr/bin/docker':
     content => '-w /usr/bin/docker -p wa',
     order   => 101
