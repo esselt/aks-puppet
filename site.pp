@@ -1,6 +1,13 @@
 node default {
   include puppet_cron
 
+  ## DISABLE DOCKER ICC ##
+  augeas { 'disable icc':
+    context => '/files/etc/systemd/system/docker.service.d/exec_start.conf/Service',
+    changes => "set ExecStart[ command = '/usr/bin/dockerd' ]/arguments/01 '--icc=false'",
+    onlyif => "match ExecStart[ command = '/usr/bin/dockerd' ]/arguments/*[ . = '--icc=false' ]"
+  }
+
   ## CLEAN UNNECESSARY USERS ##
   user { 'games':
     ensure => 'absent'
@@ -8,6 +15,7 @@ node default {
 
   ## BLACKLIST KERNEL MODULES ##
   $module_blacklist = @(EOT)
+    # File managed by Puppet
     # Modules disabled per Azure baseline
     install dccp /bin/true
     install sctp /bin/true
