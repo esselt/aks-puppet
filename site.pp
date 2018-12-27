@@ -5,7 +5,7 @@ node default {
   augeas { 'disable icc':
     context => '/files/etc/systemd/system/docker.service.d/exec_start.conf/Service',
     changes => "set ExecStart[ command = '/usr/bin/dockerd' ]/arguments/01 '--icc=false'",
-    onlyif => "match ExecStart[ command = '/usr/bin/dockerd' ]/arguments/*[ . = '--icc=false' ]"
+    onlyif => "match ExecStart[ command = '/usr/bin/dockerd' ]/arguments/*[ . = '--icc=false' ] size == 0"
   }
 
   ## CLEAN UNNECESSARY USERS ##
