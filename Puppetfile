@@ -26,6 +26,7 @@ forge "https://forgeapi.puppetlabs.com"
 
 ## LOCAL ##
 mod 'puppet_cron', :local => true
+mod 'compliance', :local => true
 
 ## FORGE ##
 mod 'puppetlabs-stdlib', '5.1.0'
