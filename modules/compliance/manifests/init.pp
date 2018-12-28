@@ -1,5 +1,5 @@
 class compliance {
-  include compliance::audit
+  include compliance::auditd
   include compliance::modules
   include compliance::users
   include compliance::docker_icc

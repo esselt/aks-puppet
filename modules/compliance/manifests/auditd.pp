@@ -1,5 +1,5 @@
-class compliance::audit {
-  include audit
+class compliance::auditd {
+  include auditd
 
   ## AUDIT DOCKER ##
   auditd::rule { 'watch /usr/bin/docker':
