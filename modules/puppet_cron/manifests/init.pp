@@ -23,6 +23,7 @@ class puppet_cron {
   logrotate::rule { 'puppet-apply':
     path => '/var/log/puppetlabs/puppet/apply.log',
     rotate => 5,
-    rotate_every => 'week'
+    rotate_every => 'week',
+    compress => true
   }
 }
