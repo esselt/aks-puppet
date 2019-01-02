@@ -18,4 +18,11 @@ class puppet_cron {
     user => 'root',
     minute => '*/5',
   }
+
+  include logrotate
+  logrotate::rule { 'puppet-apply':
+    path => '/var/log/puppetlabs/puppet/apply.log',
+    rotate => 5,
+    rotate_every => 'week'
+  }
 }

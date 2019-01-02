@@ -32,3 +32,4 @@ mod 'compliance', :local => true
 mod 'puppetlabs-stdlib', '5.1.0'
 mod 'puppetlabs-concat', '5.2.0'
 mod 'kemra102-auditd', '2.2.0'
+mod 'puppet-logrotate', '3.4.0'
