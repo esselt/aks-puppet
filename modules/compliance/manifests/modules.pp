@@ -20,5 +20,9 @@ class compliance::modules {
     owner => 'root',
     group => 'root',
     mode => '0644'
+  } ~>
+  exec { 'touch-reboot':
+    command => 'touch /var/run/reboot-required',
+    refreshonly => true
   }
 }
