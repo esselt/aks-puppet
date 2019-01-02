@@ -23,6 +23,7 @@ class compliance::modules {
   } ~>
   exec { 'touch-reboot':
     command => 'touch /var/run/reboot-required',
+    path => '/bin:/usr/bin',
     refreshonly => true
   }
 }
