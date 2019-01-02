@@ -6,5 +6,10 @@ class compliance::docker_icc {
     context => '/files/etc/systemd/system/docker.service.d/exec_start.conf/Service',
     changes => "set ExecStart[ command = '/usr/bin/dockerd' ]/arguments/01 '--icc=false'",
     onlyif => "match ExecStart[ command = '/usr/bin/dockerd' ]/arguments/*[ . = '--icc=false' ] size == 0"
+  } ~>
+  exec { 'touch-reboot':
+    command => 'touch /var/run/reboot-required',
+    path => '/bin:/usr/bin',
+    refreshonly => true
   }
 }
