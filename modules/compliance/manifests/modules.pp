@@ -20,10 +20,5 @@ class compliance::modules {
     owner => 'root',
     group => 'root',
     mode => '0644'
-  } ~>
-  exec { 'touch-reboot':
-    command => 'touch /var/run/reboot-required',
-    path => '/bin:/usr/bin',
-    refreshonly => true
-  }
+  } ~> Exec['touch-reboot']
 }
