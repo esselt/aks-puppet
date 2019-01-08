@@ -7,4 +7,10 @@ class compliance::night_sentinel {
     minute => '0',
     hour => '1'
   }
+  cron { 'kured-night-sentinel-remove':
+    ensure => present,
+    command => '[ ! -f "/var/run/reboot-required" ] && [ -f "/var/run/reboot-required-night" ] && rm -rf /var/run/reboot-required-night',
+    user => 'root',
+    hour => '*'
+  }
 }
