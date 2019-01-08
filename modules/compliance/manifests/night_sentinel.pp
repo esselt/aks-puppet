@@ -11,6 +11,6 @@ class compliance::night_sentinel {
     ensure => present,
     command => '[ ! -f "/var/run/reboot-required" ] && [ -f "/var/run/reboot-required-night" ] && rm -rf /var/run/reboot-required-night',
     user => 'root',
-    hour => '*'
+    minute => '37'
   }
 }
